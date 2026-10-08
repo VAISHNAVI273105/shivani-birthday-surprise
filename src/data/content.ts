@@ -20,7 +20,7 @@ export const websiteContent = {
     {
       id: 1,
       year: "Chapter 01",
-      date: "Where It All Began",
+      date: "Where It all Began",
       title: "The Unplanned Spark ✨",
       description: "We started as acquaintances, but one hilarious conversation changed everything. Little did I know I just met my future bestie!",
       image: "/photos/photo01.jpeg"
