@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, Heart, Calendar } from 'lucide-react';
 import type { Memory } from '../data/memories';
+import { getImageUrl } from '../utils/getImageUrl';
 
 interface LightboxProps {
   memory: Memory | null;
@@ -90,7 +91,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
-              src={memory.image}
+              src={getImageUrl(memory.image)}
               alt={memory.title}
               onError={(e) => {
                 (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&auto=format&fit=crop&q=80';

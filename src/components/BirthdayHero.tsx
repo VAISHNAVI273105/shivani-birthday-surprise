@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Heart, ChevronDown } from 'lucide-react';
 import { heroPhoto } from '../data/memories';
+import { getImageUrl } from '../utils/getImageUrl';
 
 interface BirthdayHeroProps {
   onPhotoClick?: (image: string) => void;
@@ -67,7 +68,7 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({ onPhotoClick }) => {
           <div className="relative z-0 p-3 bg-white/80 backdrop-blur-xl rounded-[32px] shadow-2xl border border-white/90 transform group-hover:scale-[1.02] transition-transform duration-500">
             <div className="overflow-hidden rounded-[24px] max-w-md w-full aspect-[4/5] bg-pink-100 relative">
               <img
-                src={heroPhoto}
+                src={getImageUrl(heroPhoto)}
                 alt="Birthday Girl Shivani"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;

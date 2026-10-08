@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Camera, Maximize2 } from 'lucide-react';
 import { memories } from '../data/memories';
 import type { Memory } from '../data/memories';
+import { getImageUrl } from '../utils/getImageUrl';
 
 interface PhotoWallProps {
   onSelectMemory: (memory: Memory) => void;
@@ -65,7 +66,7 @@ export const PhotoWall: React.FC<PhotoWallProps> = ({ onSelectMemory }) => {
               className={`relative overflow-hidden rounded-2xl bg-pink-100 cursor-pointer shadow-md group border border-white/60 ${aspectClass}`}
             >
               <img
-                src={item.image}
+                src={getImageUrl(item.image)}
                 alt={item.title}
                 loading="lazy"
                 onError={(e) => {

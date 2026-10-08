@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Sparkles, Maximize2 } from 'lucide-react';
 import { memories } from '../data/memories';
 import type { Memory } from '../data/memories';
+import { getImageUrl } from '../utils/getImageUrl';
 
 interface MemoryGalleryProps {
   onSelectMemory: (memory: Memory) => void;
@@ -97,7 +98,7 @@ export const MemoryGallery: React.FC<MemoryGalleryProps> = ({ onSelectMemory }) 
 
               <div className="w-full aspect-[4/5] overflow-hidden rounded-lg bg-pink-100 relative mb-3">
                 <img
-                  src={item.image}
+                  src={getImageUrl(item.image)}
                   alt={item.title}
                   loading="lazy"
                   onError={(e) => {

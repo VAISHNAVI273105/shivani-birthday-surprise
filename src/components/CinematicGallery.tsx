@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Sparkles } from 'lucide-react';
 import { websiteContent } from '../data/content';
+import { getImageUrl } from '../utils/getImageUrl';
 
 interface CinematicGalleryProps {
   onPhotoClick?: (image: string) => void;
@@ -38,7 +39,7 @@ export const CinematicGallery: React.FC<CinematicGalleryProps> = ({ onPhotoClick
           >
             <div className="w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden relative">
               <img
-                src={item.image}
+                src={getImageUrl(item.image)}
                 alt={`Cinematic Moment ${idx + 1}`}
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Calendar } from 'lucide-react';
 import { websiteContent } from '../data/content';
+import { getImageUrl } from '../utils/getImageUrl';
 
 interface TimelineProps {
   onPhotoClick?: (image: string) => void;
@@ -94,7 +95,7 @@ export const Timeline: React.FC<TimelineProps> = ({ onPhotoClick }) => {
                       className="mb-4 overflow-hidden rounded-2xl aspect-[16/9] bg-pink-100 cursor-pointer relative group/img shadow-md"
                     >
                       <img
-                        src={item.image}
+                        src={getImageUrl(item.image)}
                         alt={item.title}
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;

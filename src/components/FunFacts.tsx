@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Laugh } from 'lucide-react';
 import { websiteContent } from '../data/content';
+import { getImageUrl } from '../utils/getImageUrl';
 
 interface FunFactsProps {
   onPhotoClick?: (image: string) => void;
@@ -66,7 +67,7 @@ export const FunFacts: React.FC<FunFactsProps> = ({ onPhotoClick }) => {
             {card.image && (
               <div className="w-full aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-pink-50 relative shadow-sm">
                 <img
-                  src={card.image}
+                  src={getImageUrl(card.image)}
                   alt={card.title}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
